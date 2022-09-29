@@ -1,0 +1,281 @@
+#App {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+
+#Menu {
+  width: 25%;
+  height: 100%;
+  position: relative;
+}
+
+#Panel {
+  width: 85%;
+  background-image: url("./assets/img/background.png");
+  /* background-color: #AB6AAC; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  padding: 50px;
+  color: white;
+  margin: 10px 10px 10px 0;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+}
+
+.panel-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.panel-timer {
+  padding: 15px 0;
+  font-weight: 350;
+}
+
+.mbox {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cfd5e7;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.mbox:hover {
+  background-color: white;
+}
+
+.mbox i {
+  color: black;
+}
+
+.task-input {
+  /* background-color: rgba(255, 255, 255, 0.4); */
+  background-color: rgba(195, 187, 180, 0.95);
+  min-height: 47px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  padding: 0 10px;
+  gap: 0 10px;
+  transition: all 0.25s;
+}
+
+.task-input.focus {
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.task-input.focus input {
+  transition: all 0.25s;
+  color: #333334;
+}
+
+.task-input i {
+  font-size: 19px;
+  color: white;
+  margin-top: 3px;
+}
+
+.task-input input {
+  all: unset;
+  width: 100%;
+  height: 80%;
+  font-size: 14px;
+}
+
+.fa-plus-circle.focus {
+  color: #333334;
+}
+
+.searchInput {
+  min-height: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  padding: 0 10px;
+  gap: 0 10px;
+  transition: all 0.25s;
+  margin: 10px 40px;
+  border: 1px solid #ccc;
+}
+
+.searchInput.focus {
+  border: 1px solid #687681;
+}
+
+.searchInput.focus input {
+  transition: all 0.25s;
+  color: #333334;
+}
+
+.searchInput i {
+  font-size: 19px;
+  margin-top: 3px;
+}
+
+.searchInput input {
+  all: unset;
+  width: 100%;
+  height: 80%;
+  font-size: 14px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 7px 0;
+  height: 100%;
+  overflow-y: auto;
+
+  margin-bottom: 20px;
+}
+
+.tasks::-webkit-scrollbar {
+  width: 1px;
+}
+
+.task {
+  width: 100%;
+  background-color: #F6F6F6;
+  color: #333334;
+  height: 50px;
+  min-height: 50px;
+  border-radius: 7px;
+  display: flex;
+  padding: 5px 10px;
+  gap: 0 10px;
+  border: 1px solid #ccc;
+  user-select: none;
+
+  cursor: pointer;
+
+  animation: show 0.5s;
+}
+
+@keyframes show {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.taskCheck {
+  width: 20px;
+  height: 20px;
+  border-radius: 15px;
+  border: 2px solid #333334;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2px;
+}
+
+.taskCheck.done {
+  background-color: #687681;
+  border: none;
+  color: white;
+}
+
+.taskCheck.done i {
+  color: white !important;
+}
+
+.inputT {
+  all: unset;
+  width: 100%;
+  height: 100%;
+}
+
+.taskgrouptitle {
+  background-color: white;
+  border-radius: 7px;
+  display: inline;
+  color: #333334;
+  padding: 10px;
+  background-color: rgb(237, 237, 237);
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  user-select: none;
+}
+
+.nav {
+  display: flex;
+  gap: 4px 0;
+  flex-direction: column;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 4px;
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: 17px;
+  position: relative;
+  margin: 0 10px;
+  user-select: none;
+}
+
+.nav-item.active {
+  background-color: #EAEAEA;
+}
+
+.nav-item.active::before {
+  left: 3px;
+  width: 3px;
+  height: 40%;
+  border-radius: 10px;
+  content: "\200B";
+  position: absolute;
+  background-color: #005FB8;
+}
+
+.nav-item i {
+  min-width: 35px;
+  text-align: center;
+}
+
+.nav-item:hover {
+  background-color: #EAEAEA;
+}
+
+.cpr {
+  width: 90%;
+  height: 40px;
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  transform: translateX(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: #687681;
+}
