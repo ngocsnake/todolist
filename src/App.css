@@ -330,7 +330,7 @@
     position: absolute;
     background-color: white;
     width: 77%;
-    animation: 0.5s show;
+    animation: 0.5s showmobile;
     z-index: 999;
   }
 
