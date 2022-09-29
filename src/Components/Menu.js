@@ -1,12 +1,28 @@
 import { useState } from "react";
 
-function Menu({ tab, handleActive, searchQuery, setSearchQuery }) {
+function Menu({
+  tab,
+  handleActive,
+  searchQuery,
+  setSearchQuery,
+  openMenu,
+  setOpenMenu,
+}) {
   const [inputFocus, setInputFocus] = useState(false);
 
   const [query, setQuery] = useState("");
 
   return (
-    <div id="Menu">
+    <div id="Menu" className={openMenu ? "open" : "hidden"}>
+      <div
+        className="closemenu"
+        style={{ display: "none" }}
+        onClick={() => {
+          setOpenMenu((prev) => !prev);
+        }}
+      >
+        <i className="fas fa-times"></i>
+      </div>
       <div
         style={{
           display: "flex",

@@ -18,10 +18,10 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-radius: 10px;
+  border-radius: 10px 0% 0% 10px / 10px 10px 0% 10px;
   padding: 50px;
   color: white;
-  margin: 10px 10px 10px 0;
+  margin: 0 0 0 0;
 
   display: flex;
   flex-direction: column;
@@ -48,6 +48,24 @@
   background-color: #cfd5e7;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+}
+
+.setting {
+  position: absolute;
+  width: 270px;
+  padding: 30px;
+  border-radius: 7px;
+  top: calc(100% + 5px);
+  right: 0;
+  background-color: #005FB8;
+  display: flex;
+  flex-direction: column;
+  gap: 20px 0;
+}
+
+.setting-item div {
+  padding: 3px 10px;
 }
 
 .mbox:hover {
@@ -278,4 +296,74 @@
   font-size: 15px;
   font-weight: bold;
   color: #687681;
+}
+
+.menubtn {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+
+  #App {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
+  #Panel {
+    width: 100%;
+    border-radius: 0px;
+    padding: 35px;
+    padding-top: 20px;
+  }
+
+  @keyframes showmobile {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+  #Menu {
+    display: none;
+    position: absolute;
+    background-color: white;
+    width: 77%;
+    animation: 0.5s show;
+    z-index: 999;
+  }
+
+  .menubtn {
+    display: block;
+  }
+
+  #Menu.open {
+    display: block;
+  }
+
+  #Menu.open .closemenu {
+    width: 30px;
+    height: 30px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    font-weight: bold;
+    position: absolute;
+    font-size: 20px;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+@media only screen and (max-width: 900px) and (min-width: 601px) {
+
+  #Panel {
+    width: 65%;
+  }
+
+  #Menu {
+    width: 35%;
+  }
 }

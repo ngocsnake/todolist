@@ -3,7 +3,7 @@ import Task from "./Task";
 import { useState, useEffect, useRef } from "react";
 import uniqid from "uniqid";
 
-function Panel({ tab, searchQuery }) {
+function Panel({ tab, searchQuery, setOpenMenu }) {
   const currentTime = new Date().toLocaleString("en-us", {
     weekday: "long",
     day: "numeric",
@@ -172,6 +172,15 @@ function Panel({ tab, searchQuery }) {
 
   return (
     <div id="Panel">
+      <div
+        style={{ padding: "5px 0 15px 0" }}
+        className="menubtn"
+        onClick={() => {
+          setOpenMenu((prev) => !prev);
+        }}
+      >
+        <i class="far fa-bars"></i>
+      </div>
       <div style={{ display: "flex", flexDirection: "column", height: "100%" }}>
         <div
           style={{
@@ -184,15 +193,35 @@ function Panel({ tab, searchQuery }) {
             <div className="panel-timer">{currentTime}</div>
           </div>
           <div style={{ display: "flex", gap: "0 15px" }}>
-            <div className="mbox">
+            {/* <div className="mbox">
               <i className="fal fa-expand-alt"></i>
             </div>
             <div className="mbox">
               <i className="fal fa-lightbulb"></i>
-            </div>
-            <div className="mbox">
+            </div> */}
+            {/* <div className="mbox">
               <i className="far fa-ellipsis-h"></i>
-            </div>
+              <div className="setting">
+                <div className="setting-item">
+                  <b>Sort by</b>
+                  <div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                  </div>
+                </div>
+                <div className="setting-item">
+                  <b>Theme</b>
+                  <div>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                  </div>
+                </div>
+              </div>
+            </div> */}
             <div className="mbox">
               <i className="far fa-wifi-slash"></i>
             </div>

@@ -10,6 +10,8 @@ function App() {
 
   const [searchQuery, setSearchQuery] = useState("");
 
+  const [openMenu, setOpenMenu] = useState(false);
+
   const handleActive = (tab) => {
     setActive(tab);
   };
@@ -20,8 +22,14 @@ function App() {
         tab={active}
         handleActive={handleActive}
         setSearchQuery={setSearchQuery}
+        openMenu={openMenu}
+        setOpenMenu={setOpenMenu}
       ></Menu>
-      <Panel tab={active} searchQuery={searchQuery}></Panel>
+      <Panel
+        tab={active}
+        searchQuery={searchQuery}
+        setOpenMenu={setOpenMenu}
+      ></Panel>
     </div>
   );
 }
