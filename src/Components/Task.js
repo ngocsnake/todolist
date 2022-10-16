@@ -120,7 +120,7 @@ function Task({
               className={info.important ? "fas fa-star" : "fal fa-star"}
               onClick={() => {
                 handleImportantClick(info.id);
-                // setStCpn(!stCpn);
+                setStCpn(!stCpn);
               }}
             ></i>
           </div>
