@@ -36,7 +36,7 @@ function Task({
     <div
       className="task"
       onDoubleClick={(e) => {
-        setStCpn(!stCpn);
+        // setStCpn(!stCpn);
         handleCheckTask(info.id);
         e.target.blur();
         e.target.selectionStart = e.target.selectionEnd;
@@ -51,7 +51,7 @@ function Task({
         <div
           className={info.isCompleted ? "taskCheck done" : "taskCheck"}
           onClick={() => {
-            setStCpn(!stCpn);
+            // setStCpn(!stCpn);
             handleCheckTask(info.id);
           }}
           onMouseEnter={() => setFocus(true)}
@@ -120,7 +120,7 @@ function Task({
               className={info.important ? "fas fa-star" : "fal fa-star"}
               onClick={() => {
                 handleImportantClick(info.id);
-                setStCpn(!stCpn);
+                // setStCpn(!stCpn);
               }}
             ></i>
           </div>

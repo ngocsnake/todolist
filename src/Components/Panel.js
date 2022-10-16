@@ -124,6 +124,7 @@ function Panel({ tab, searchQuery, setOpenMenu }) {
 
     localStorage.setItem("items", JSON.stringify(tasks));
     sU(!u);
+    //copy new array
   };
 
   const handleRemoveTask = (id) => {
